@@ -8,11 +8,9 @@ var listaIngredienti = [
     ["mustard", 0.5],
     ["tomato", 1]
 ];
-console.log(listaIngredienti);
 
 //vado a stampare su html le card in base agli ingredienti presenti
 var elementoContenitore = document.querySelector(".ingredients");
-console.log(elementoContenitore);
 
 for (var i = 0; i < listaIngredienti.length; i++) {
     elementoContenitore.insertAdjacentHTML("beforeend",
@@ -23,39 +21,51 @@ for (var i = 0; i < listaIngredienti.length; i++) {
         </div>`);
 }
 
-//devo andare a vedere quando il pulsante viene schiacciato
-//vado a vedere qualche check sono selezionate
-//stabilisco un prezzo base del panin0
-//calcolo il prezzo del panino
+//controllo quando il pulsante viene schiacciato avvio il calcolo del prezzo in base alle cose selezionate
 
-
-//vado a prendere tutti gli elementio che sono input con type checkbox
-var check = document.querySelectorAll("input[type='checkbox']");
-console.log(check);
-
-//inizzializzo i prezzi base del panino e della somma
-var prezzoBase = 8.99;
-var sommaIngredienti = 0;
-
-//vado a vedere quali elementio sono selezionati cosa da aggiungerli al prezzo del panino
-for (var i = 0; i < listaIngredienti.length; i++) {
-    var elemento = check[i];
-
-    //vado a prednere ogni elemento dei checkbox e estraggo il suo valore prezzo
-    var prezzoIngrediente = Number(elemento.getAttribute('data-price'));
-    console.log(prezzoIngrediente);
-
-    //se l'elemento e selezionato vado ad aggiungere il suo valore
-    if (elemento.checked) {
-        sommaIngredienti += prezzoIngrediente;
-    }
-}
-console.log(sommaIngredienti);
-
-var totalePanino = prezzoBase + sommaIngredienti;
-console.log(totalePanino);
-/*
 function calcolaPrezzo() {
+    //vado a prendere tutti gli elementio che sono input con type checkbox
+    var check = document.querySelectorAll("input[type='checkbox']");
+
+    //inizzializzo i prezzi base del panino e della somma
+    var prezzoBase = 8.99;
+    var sommaIngredienti = 0;
+
+    //vado a vedere quali elementio sono selezionati cosa da aggiungerli al prezzo del panino
+    for (var i = 0; i < listaIngredienti.length; i++) {
+        var elemento = check[i];
+
+        //vado a prednere ogni elemento dei checkbox e estraggo il suo valore prezzo
+        var prezzoIngrediente = Number(elemento.getAttribute('data-price'));
+
+        //se l'elemento e selezionato vado ad aggiungere il suo valore
+        if (elemento.checked) {
+            sommaIngredienti += prezzoIngrediente;
+        }
+    }
+    //calcolo il prezzo con gli ingredienti
+    var totalePanino = prezzoBase + sommaIngredienti;
+    console.log(totalePanino);
+
+    //vado a vedere se ha inserito un codice sconto
+    var coupon = document.getElementById("coupon").value;
+    console.log(coupon);
+
+    //creo una lista di codici sconto da poter applicare eapplico lo sconto
+    var codiciSconto = ["sconto10", "sconto20", "sconto30"];
+
+    if (coupon === "sconto10") {
+        totalePanino -= (totalePanino * 0.1);
+    } else if (coupon === "sconto20") {
+        totalePanino -= (totalePanino * 0.2);
+    } else if (coupon === "sconto30") {
+        totalePanino -= (totalePanino * 0.3);
+    }
+
+    console.log(totalePanino);
+    document.getElementById("prezzo_finale").innerHTML = totalePanino.toFixed(2);
+
+
 
 }
-*/
+
