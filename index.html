@@ -12,36 +12,46 @@
 </head>
 
 <body>
-    <!-- Site header -->
-    <header id="site_header">
-        <h1>Create Your Burger</h1>
+    <div class="container">
 
-    </header>
-    <!-- /Site header -->
+        <!-- Site header -->
+        <header id="site_header">
+            <h1>Create Your Burger</h1>
+            <img src="./assets/img/burger-top.png" alt="">
 
-    <!-- Main Site-->
-    <main id="main_site">
+        </header>
+        <!-- /Site header -->
 
-        <h2>Name Burger</h2>
-        <h3>Ingredients</h3>
+        <!-- Main Site-->
+        <main id="main_site">
 
-        <section class="ingredients">
-            <!-- elementi inseriti con JS -->
-        </section>
-        <input type="text" name="coupon" id="coupon">
+            <input type="text" name="nameBurger" id="nameBurger" placeholder="Name Your Burger">
+            <h3>Ingredients</h3>
 
-        <button onclick="calcolaPrezzo()">Calcola</button>
+            <section class="ingredients">
+                <!-- elementi inseriti con JS -->
+            </section>
+            <div class="discount_box">
+                <span class="discount">Discount Coupon</span>
+                <input type="text" name="coupon" id="coupon" placeholder="Add Coupon">
+            </div>
+            <div class="button_box">
+                <button onclick="calcolaPrezzo()">Calculate</button>
+            </div>
 
-    </main>
-    <!-- Main Site-->
 
-    <!-- Site Footer-->
-    <footer id="site_footer">
+        </main>
+        <!-- Main Site-->
 
-        <div id="prezzo_finale"></div>
+        <!-- Site Footer-->
+        <footer id="site_footer">
+            <div class="price_text">Your Price</div>
 
-    </footer>
-    <!-- Site Footer-->
+            <div id="prezzo_finale"></div>
+
+        </footer>
+        <!-- Site Footer-->
+    </div>
 
 
 

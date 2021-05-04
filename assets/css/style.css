@@ -4,6 +4,17 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: antiquewhite;
+}
+.container{
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 
 
@@ -11,12 +22,131 @@
 
 
 /**************** Header ****************/
+#site_header{
+    background-color: #FDBB40;
+    height: 15%;
+    position: relative;
+}
+
+#site_header h1{
+    font-size: 3rem;
+    padding-left: 3rem;
+    padding-top: 3rem;
+}
+#site_header img{
+    position: absolute; 
+    right: -70px;
+    top: -23px;
+}
 
 
 /**************** Main ****************/
+#main_site{
 
-.form_group img{
-    height: 30px;
+    width: 90%;
+    height: 70%;
+    margin: 0 auto;
+}
+#nameBurger{
+    height: 50px;
+    width: 50%;
+    border: none;
+}
+#nameBurger::placeholder{
+    font-size: 2rem;
+}
+#main_site h3{
+    margin: 2rem 0;
+    font-size: 1.5rem;
 }
 
+.ingredients{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form_group{
+width: 50%;
+padding: 0.5rem 0;
+display: flex;
+align-items: center;
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.form_group img{
+    height: 40px;
+}
+
+.form_group label{
+    margin: 0 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+input[type = "checkbox"]{
+    background-color: #D33359;
+}
+
+.form_group span{
+    margin-left: 0.5rem;
+    color: #D33359;
+    font-weight: bold;
+}
+
+.discount_box{
+    padding: 1rem 0;
+}
+.discount{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+#coupon{
+    width: 70%;
+    border: none;
+    background-color: blanchedalmond;
+    height: 30px;
+    border-radius: 10px;
+}
+#coupon::placeholder{
+    padding-left: 1rem;
+}
+
+.button_box{
+    text-align: center;
+    margin-top: 2rem;
+}
+.button_box button{
+    padding: 1rem 2rem;
+    background-color: #FDBB40;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+
+
+
+
 /**************** footer ****************/
+
+#site_footer{
+    background-color: #D33359;
+    height: 10%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.price_text{
+    padding-left: 2rem;
+    color: white;
+    font-size: 2rem;
+}
+
+#prezzo_finale{
+    padding-right: 2rem;
+    color: white;
+    font-size: 2rem;
+}

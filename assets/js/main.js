@@ -18,6 +18,7 @@ for (var i = 0; i < listaIngredienti.length; i++) {
                 <img src="./assets/img/${listaIngredienti[i][0]}.svg" alt="Immage of ${listaIngredienti[i][0]}">
                 <label for="${listaIngredienti[i][0]}">${listaIngredienti[i][0]}</label>
                 <input type="checkbox" name="${listaIngredienti[i][0]}" id="${listaIngredienti[i][0]}" data-price="${listaIngredienti[i][1]}">
+                <span>add</span>
         </div>`);
 }
 
@@ -63,7 +64,7 @@ function calcolaPrezzo() {
     }
 
     console.log(totalePanino);
-    document.getElementById("prezzo_finale").innerHTML = totalePanino.toFixed(2);
+    document.getElementById("prezzo_finale").innerHTML = "$ " + totalePanino.toFixed(2);
 
 
 
