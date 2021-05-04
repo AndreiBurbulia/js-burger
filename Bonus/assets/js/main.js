@@ -16,10 +16,13 @@ for (var i = 0; i < listaIngredienti.length; i++) {
     elementoContenitore.insertAdjacentHTML("beforeend",
         `<div class="form_group">
                 <img src="./assets/img/${listaIngredienti[i][0]}.svg" alt="Immage of ${listaIngredienti[i][0]}">
-                <label for="${listaIngredienti[i][0]}">${listaIngredienti[i][0]}</label>
-                <input type="checkbox" name="${listaIngredienti[i][0]}" id="${listaIngredienti[i][0]}" data-price="${listaIngredienti[i][1]}">
-                <i class="fas fa-check"></i>
-                <span>add</span>
+                <span> ${listaIngredienti[i][0]}</span>
+                <label class="container_check" for="${listaIngredienti[i][0]}">
+                   
+                    <input type="checkbox"  name="${listaIngredienti[i][0]}" id="${listaIngredienti[i][0]}" data-price="${listaIngredienti[i][1]}" >
+                    <span class="checkmark"></span>
+                </label>
+                <span class= "add">add</span>
         </div>`);
 }
 

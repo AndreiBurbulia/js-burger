@@ -85,36 +85,85 @@ font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-transform: capitalize;
 }
-#main_site .ingredients input[type = "checkbox"]{
-    appearance: none;
+/* The container */
+.container_check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-#main_site .ingredients input[type = "checkbox"]::after{
-  content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
+
+/* Hide the browser's default checkbox */
+.container_check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 20px;
+  width: 20px;
   background-color: #D33359;
+}
+
+/* On mouse-over, add a grey background color */
+.container_check:hover input ~ .checkmark {
+  background-color: #D33359;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container_check input:checked ~ .checkmark {
+  background-color: #D33359;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container_check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container_check .checkmark:after {
+  left: 6px;
+  top: 1px;
+  width: 7px;
+  height: 12px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
 
 }
-#main_site .ingredients .form_group i{
-    font-size: 20px;
-    margin-left: -18px;
-    margin-bottom: 5px;
-    display: none;
-}
- #main_site .ingredients input[type = "checkbox"]:checked ~ i{
-    display: inline-block;
-
- }
-
-
 
 .form_group span{
     margin-left: 0.5rem;
-    color: #D33359;
     font-weight: bold;
+    text-transform: capitalize;
 }
-
+.add{
+    color: #D33359;
+    padding-left: -10px;
+}
 .discount_box{
     padding: 1rem 0;
 }
